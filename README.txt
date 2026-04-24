@@ -12,7 +12,7 @@ GROUP MEMBERS & ROLES
   Phani    — Node 4  Chat Client   (runs client.py 4)
 
 Distributed Mutual Exclusion (DME) is implemented using the
-Ricart-Agrawala algorithm (DC-07 lecture, assertion-based,
+Ricart-Agrawala algorithm (assertion-based,
 non-token, Lamport logical clocks).  Only "post" (write) acquires
 the Critical Section; "view" (read) runs without DME.
 
