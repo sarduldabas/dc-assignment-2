@@ -1,0 +1,25 @@
+# ── Generated files ───────────────────────────────────────────────
+*.log
+chat.txt
+
+# ── Python cache ──────────────────────────────────────────────────
+__pycache__/
+*.pyc
+*.pyo
+
+# ── Documents & media ─────────────────────────────────────────────
+*.docx
+*.doc
+*.pdf
+*.pptx
+*.ppt
+*.xlsx
+*.xls
+*.png
+*.jpg
+*.jpeg
+
+# ── OS noise ──────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
