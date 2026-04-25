@@ -13,7 +13,7 @@
     "1": { "name": "Tanya",   "host": "172.31.66.81", "dme_port": 5001 },
     "2": { "name": "Archana", "host": "172.31.123.90", "dme_port": 5002 },
     "3": { "name": "Yash",    "host": "172.31.124.216", "dme_port": 5003 },
-    "4": { "name": "Phani",   "host": "localhost", "dme_port": 5004 }
+    "4": { "name": "Phani",   "host": "172.31.84.227", "dme_port": 5004 }
   },
  
   "_lab_example": {
