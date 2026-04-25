@@ -2,20 +2,20 @@
   "_comment": "Distributed Chat Room — Node Configuration",
   "_local_testing": "All nodes on localhost with different ports",
   "_lab_deployment": "Replace 'localhost' / placeholder IPs with each machine's actual IP",
-
+ 
   "server": {
-    "host": "localhost",
+    "host": "172.31.109.248",
     "port": 5000,
     "log_port": 5010
   },
-
+ 
   "nodes": {
-    "1": { "name": "Tanya",   "host": "localhost", "dme_port": 5001 },
-    "2": { "name": "Archana", "host": "localhost", "dme_port": 5002 },
-    "3": { "name": "Yash",    "host": "localhost", "dme_port": 5003 },
+    "1": { "name": "Tanya",   "host": "172.31.66.81", "dme_port": 5001 },
+    "2": { "name": "Archana", "host": "172.31.123.90", "dme_port": 5002 },
+    "3": { "name": "Yash",    "host": "172.31.124.216", "dme_port": 5003 },
     "4": { "name": "Phani",   "host": "localhost", "dme_port": 5004 }
   },
-
+ 
   "_lab_example": {
     "_note": "For lab machines replace localhost with actual IPs, e.g.:",
     "server":  { "host": "192.168.1.10", "port": 5000, "log_port": 5010 },
