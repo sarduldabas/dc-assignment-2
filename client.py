@@ -128,18 +128,22 @@ def server_request(cfg: dict, payload: dict) -> dict:
 def cmd_view(cfg: dict, logger: logging.Logger):
     """View chat file — no DME required (read-only operation)."""
     logger.info("Sending VIEW request to server")
-    resp = server_request(cfg, {"cmd": "view"})
-    if resp.get("status") == "ok":
-        content = resp.get("content", "")
-        print("\n" + ("─" * 50))
-        if content.strip():
-            print(content, end="")
+    try:
+        resp = server_request(cfg, {"cmd": "view"})
+        if resp.get("status") == "ok":
+            content = resp.get("content", "")
+            print("\n" + ("─" * 50))
+            if content.strip():
+                print(content, end="")
+            else:
+                print("(chat file is empty)")
+            print("─" * 50 + "\n")
         else:
-            print("(chat file is empty)")
-        print("─" * 50 + "\n")
-    else:
-        logger.error(f"VIEW failed: {resp.get('message')}")
-        print(f"[ERROR] {resp.get('message')}")
+            logger.error(f"VIEW failed: {resp.get('message')}")
+            print(f"[ERROR] {resp.get('message')}")
+    except Exception as e:
+        logger.error(f"Cannot reach server: {e}")
+        print(f"[ERROR] Server unreachable — make sure server.py is running.")
 
 
 def cmd_post(cfg: dict, dme: RicartAgrawala,
@@ -177,6 +181,9 @@ def cmd_post(cfg: dict, dme: RicartAgrawala,
         else:
             logger.error(f"POST failed: {resp.get('message')}")
             print(f"[ERROR] {resp.get('message')}")
+    except Exception as e:
+        logger.error(f"Cannot reach server: {e}")
+        print(f"[ERROR] Server unreachable — make sure server.py is running.")
     finally:
         # ── Step 3: release CS regardless of server outcome ───────────────────
         dme.release_cs()
